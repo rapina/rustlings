@@ -4,8 +4,18 @@
 // - Macros
 
 // Write a macro that passes the quiz! No hints this time, you can do it!
-
-// I AM NOT DONE
+macro_rules! my_macro {
+    // `()` indicates that the macro takes no argument.
+    ($val:expr) => {
+        // The macro will expand into the contents of this block.
+        //println!("Hello!");
+        if $val == "world!" {
+            "Hello world!"
+        } else {
+            "Hello goodbye!"
+        }
+    };
+}
 
 #[cfg(test)]
 mod tests {
@@ -21,3 +31,4 @@ mod tests {
         assert_eq!(my_macro!("goodbye!"), "Hello goodbye!");
     }
 }
+
